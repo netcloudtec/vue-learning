@@ -28,19 +28,17 @@
    <script type="text/javascript">
        Vue.config.productionTip = false;
        //el的两种写法
-       // const v = new Vue({
-       //     // el: '#root', //第一种写法
-       //     data: {
-       //         name: '上海'
-       //     }
-       // });
-       //
-       // // console.log(v);
-       // //关联root容器，用mount方法
-       // setTimeout(() => {
-       //     v.$mount('#root'); //第二种写法 挂载到页面上
-       // }, 3000)
-
+       /**
+        * const v = new Vue({
+        *     //el: '#root', //第一种写法
+        *     data: {
+        *         name: '上海'
+        *     }
+        * });
+        * console.log(v);
+        * //关联root容器，用mount方法
+        * v.$mount('#root'); //第二种写法挂载到页面上
+        */
        //data的两种写法
        new Vue({
           el: '#root',
