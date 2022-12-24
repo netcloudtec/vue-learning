@@ -10,12 +10,12 @@
 </head>
 <body>
         <!--
-				事件的基本使用：
-							1.使用v-on:xxx 或 @xxx 绑定事件，其中xxx是事件名；
-							2.事件的回调需要配置在methods对象中，最终会在vm上；
-							3.methods中配置的函数，不要用箭头函数！否则this就不是vm了；
-							4.methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；
-							5.@click="demo" 和 @click="demo($event)" 效果一致，但后者可以传参；
+		事件的基本使用：
+					1.使用v-on:xxx 或 @xxx 绑定事件，其中xxx是事件名；
+					2.事件的回调需要配置在methods对象中，最终会在vm上；
+					3.methods中配置的函数，不要用箭头函数！否则this就不是vm了；
+					4.methods中配置的函数，都是被Vue所管理的函数，this的指向是vm 或 组件实例对象；
+					5.@click="demo" 和 @click="demo($event)" 效果一致，但后者可以传参；
 		-->
     <div id="root">
         <!--指令语法 v开头 例如v-on:click点击事件-->
@@ -31,14 +31,13 @@
             data(){
                 return {
                    name: 'shanghai',
-
                 }
             },
             //methods配置事件处理的回调函数
             methods:{
                 showInfo1(e){
-                    //默认给你传递event参数
-                    //当是箭头函数的话this那就是window
+                    //默认第一个参数给你传递的是event参数
+                    //当使用箭头函数的话this那就是window，否则就是vue实例
                     console.log(this === vm); //this是vue实例
                     console.log('你好');
                 },
@@ -49,8 +48,6 @@
                 }
             }
         });
-
-
     </script>
 </body>
 </html>
