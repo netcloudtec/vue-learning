@@ -14,7 +14,6 @@
            name: '张三',
            sex:'男'
        }
-
        //此时age是不可以枚举的
        //往person对象里添加属性
        //关联
@@ -23,7 +22,6 @@
            // enumerable: true, //此时代表这个属性是可以枚举的
            // writable: true, //代表可以重写该属性(控制属性是否被修改)
            // configurable:true, //控制属性是否可以被删除 默认为false
-
 
            //当读取person的age属性时get属性就会被调用，且返回值就是age的值
            //invoke property proxy映射数据代理
@@ -40,16 +38,7 @@
                number=v;
            }
        });
-
        // console.log(Object.keys(person))
-
-       //遍历
-       // for(var p  in  person){
-       //     console.log('@@', person[p])
-       // }
-
-
-
        console.log(person);
    </script>
 </body>

@@ -25,18 +25,13 @@
      </div>
     <script type="text/javascript">
         Vue.config.productionTip = false;
-        let data;
         //通过vm代理
         const vm = new Vue({
-           el:'#root',
-            //vm._data === options.data = data
-            //
-           data(){
-               return data = {
-                   name:'panyue',
-                   address:'shanghai'
-               }
-           }
+            el:'#root',
+            data:{
+                name:'北京大学',
+                address:'北京'
+            }
         });
     </script>
 </body>
