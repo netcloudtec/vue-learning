@@ -11,10 +11,10 @@
 <body>
 <div id="root">
     <!--
-			v-for指令:
-						1.用于展示列表数据
-						2.语法：v-for="(item, index) in xxx" :key="yyy"
-						3.可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）
+	v-for指令:
+			1.用于展示列表数据
+			2.语法：v-for="(item, index) in xxx" :key="yyy"
+			3.可遍历：数组、对象、字符串（用的很少）、指定次数（用的很少）
 	-->
     <h2>人员列表</h2>
     <ul>
@@ -57,11 +57,13 @@
                 {id: '002', name: '李四', age: 19},
                 {id: '003', name: '王五', age: 20}
             ],
+            //对象
             car: {
                 name: '奥迪a8',
                 price: '70w',
                 color: '黑色'
             },
+            //字符串
             str: 'hello'
         }
     })
