@@ -11,25 +11,20 @@
 <body>
 <div id="root">
     <h1>今天天气很 {{ info }}</h1>
-    <!--点击函数里面可以书写较为简单的语句-->
-    <!--@xxx='yyyy' yyyy可以是一些简单的语句-->
-<!--    <button @click="isHot = !isHot">-->
-<!--        切换-->
-<!--    </button>-->
-    <button @click="changeWeather">
-        切换
-    </button>
+    <!--绑定事件的时候：@xxx='yyyy' yyyy可以写一些简单的语句-->
+    <!--<button @click="isHot = !isHot"> 切换天气 </button>-->
+    <button @click="changeWeather">切换天气</button>
 </div>
 <script type="text/javascript">
     Vue.config.productionTip = false;
-    new Vue({
+    const vm=new Vue({
         el:'#root',
         data:{
             isHot: true
         },
         //计算属性
         computed: {
-            info(){
+            info:function (){
                 return this.isHot ? '炎热' : '凉爽';
             }
         },
@@ -39,6 +34,7 @@
                 this.isHot = !this.isHot;
             }
         }
-    })</script>
+    })
+</script>
 </body>
 </html>
