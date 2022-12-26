@@ -34,7 +34,7 @@
     //     //watch监听用户输入项keyword的变化
     //     watch:{
     //         keyword: {
-    //            immediate: true, //上来就进行监视获得到的newV是''
+    //            immediate: true, //上来就进行监视获得到的newV是 ''
     //            handler(newV){
     //                // console.log(newV)
     //                //不要修改元数据，这样只会越写越少
@@ -45,7 +45,6 @@
     //     }
     // })
     //用计算属性书写功能
-
     //当computed和watch都可以实现基本功能时优先考虑computed (重要)
     new Vue({
         el:'#root',
@@ -58,9 +57,15 @@
                 {id: "004", name:'温兆伦', age:22, sex: '男'},
             ],
         },
+        //计算属性的回调函数什么时候调用？
+        //1.页面初始化的时候调用
+        //2.计算时候依赖数据发送变化调用（keyword发送变化时调用）
         computed:{
             filPersons(){
-                return this.persons.filter(p => p.name.indexOf(this.keyword) !== -1);
+                //return this.persons.filter(p => p.name.indexOf(this.keyword) !== -1);
+                return this.persons.filter((p)=>{
+                    return p.name.indexOf(this.keyword) !== -1
+                })
             }
         }
     })
