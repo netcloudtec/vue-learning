@@ -10,61 +10,61 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
+<!--
+初识Vue
+1.想让vue工作，就必须创建一个vue实例，且要传入一个配置对象(el和data对象)；
+2.容器里的代码依然符合html规范，只不过混入了一些特殊的vue语法({{}}})；
+3.容器里的代码被称为Vue模板；
+4.Vue实例和容器是一一对应的；
+5.真实开发中只有一个vue实例，并且会配合着组件一起使用；
+6.{{xxx}}中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；
+7.一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新
+-->
+
+<!--准备好一个容器-->
+<div id="root">
+    <!--插值语法 {{}}} -->
+    <h1>Hello, {{name}}</h1>
+</div>
+<div class="test">
+    <!--注意双花括号{{}}中可以写js表达式-->
     <!--
-    初识Vue
-    1.想让vue工作，就必须创建一个vue实例，且要传入一个配置对象；
-    2.容器里的代码依然符合html规范，只不过混入了一些特殊的vue语法；
-    3.容器里的代码被称为Vue模板；
-    4.Vue实例和容器是一一对应的；
-    5.真实开发中只有一个vue实例，并且会配合着组件一起使用；
-    6.{{xxx}}中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；
-    7.一旦data中的数据发生改变，那么页面中用到该数据的地方也会自动更新
+      js表达式：一个表达式会生成一个值，可以放在任何一个需要值的地方
+            例如 (1) a
+                (2) 1+b
+                (3) demo(1)
+               （4) x===y ? 1 : 0
+      js代码(语句)：
+                (1) if(){}
+                (2) for(){}
     -->
+    <h1>{{name.toUpperCase()}},{{address}} {{1+1}} {{Date.now()}}</h1>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false; //阻止Vue在启动的时生成生产提示。
+    /**
+     * 注意:一个vue实例不可能去接管多个容器，如果有多个容器的情况，vue实例永远只接管第一个容器
+     * 不能多个vue实例同时来接管同一个容器，如果有多个的情况下永远是第一个vue实例来接管该容器
+     * vue实例与容器直接的对应关系是一对一的
+     */
+    //创建vue实例对象
+    const x = new Vue({
+            //实例和容器建立关系进行绑定
+            el: '#root',// document.getElementById('root') //element el指定当前vue实例为哪一个容器服务，值通常为css选择器格式
+            data: {
+                //data用来存储数据，数据供el指定的容器去使用,值我们暂时先写成一个对象
+                name: '网云科技',
+                address: '北京市朝阳区环球贸易中心'
+            }
+        });
 
-    <!--准备好一个容器-->
-    <div id="root">
-        <!--插值语法 {{}}} -->
-        <h1>Hello, {{name}}</h1>
-    </div>
-    <div class="test">
-        <!--注意双花括号{{}}中可以写js表达式-->
-        <!--
-          js表达式：一个表达式会生成一个值，可以放在任何一个需要值的地方
-                例如 (1) a
-                    (2) 1+b
-                    (3) demo(1)
-                   （4) x===y ? 1 : 0
-          js代码(语句)：
-                    (1) if(){}
-                    (2) for(){}
-        -->
-        <h1>{{name.toUpperCase()}},{{address}} {{1+1}} {{Date.now()}}</h1>
-    </div>
-    <script type="text/javascript">
-       Vue.config.productionTip = false; //阻止Vue在启动的时生成生产提示。
-       /**
-        * 注意:一个vue实例不可能去接管多个容器，如果有多个容器的情况，vue实例永远只接管第一个容器
-        * 不能多个vue实例同时来接管同一个容器，如果有多个的情况下永远是第一个vue实例来接管该容器
-        * vue实例与容器直接的对应关系是一对一的
-        */
-       //创建vue实例对象
-       new Vue({
-           //配置对象
-           el: '#root',// document.getElementById('root') //element el指定当前vue实例为哪一个容器服务，值通常为css选择器格式
-           data: {
-               //data用来存储数据，以后会用函数来表示
-               name:'网云科技',
-               age:21
-           }
-       });
-
-       new Vue({
-           el: '.test',
-           data:{
-               name: '小甜甜',
-               address: '北京'
-           }
-       })
-    </script>
+    new Vue({
+        el: '.test',
+        data: {
+            name: 'Sweet baby',
+            age: '18'
+        }
+    })
+</script>
 </body>
 </html>
