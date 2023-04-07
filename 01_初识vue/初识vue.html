@@ -24,9 +24,6 @@
 <!--准备好一个容器-->
 <div id="root">
     <!--插值语法 {{}}} -->
-    <h1>Hello, {{name}}</h1>
-</div>
-<div class="test">
     <!--注意双花括号{{}}中可以写js表达式-->
     <!--
       js表达式：一个表达式会生成一个值，可以放在任何一个需要值的地方
@@ -38,8 +35,9 @@
                 (1) if(){}
                 (2) for(){}
     -->
-    <h1>{{name.toUpperCase()}},{{address}} {{1+1}} {{Date.now()}}</h1>
+    <h1>Hello, {{name.toUpperCase()}},{{address}},{{1+1}} {{Date.now()}}</h1>
 </div>
+
 <script type="text/javascript">
     Vue.config.productionTip = false; //阻止Vue在启动的时生成生产提示。
     /**
@@ -57,14 +55,6 @@
                 address: '北京市朝阳区环球贸易中心'
             }
         });
-
-    new Vue({
-        el: '.test',
-        data: {
-            name: 'Sweet baby',
-            age: '18'
-        }
-    })
 </script>
 </body>
 </html>
