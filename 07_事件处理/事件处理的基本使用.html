@@ -25,15 +25,15 @@
         <button @click="showInfo2($event,66)">点我提示信息2</button>
     </div>
     <script type="text/javascript">
-        Vue.config.productionTip = false;
+        Vue.config.productionTip = false; //防止vue在启动的时候生成生产提示
         const vm = new Vue({
             el: '#root',
             data(){
                 return {
-                   name: 'shanghai',
+                   name: '网云科技学习',
                 }
             },
-            //methods配置事件处理的回调函数
+            //methods配置事件处理的回调函数，不需要数据代理，所以就不需要放在data中
             methods:{
                 showInfo1(e){
                     //默认第一个参数给你传递的是event参数
