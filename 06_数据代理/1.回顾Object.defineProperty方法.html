@@ -10,32 +10,32 @@
 <body>
    <script type="text/javascript">
        let number = 18;
+       //定义一个person对象
        let person = {
            name: '张三',
            sex:'男'
        }
-       //此时age是不可以枚举的
        //往person对象里添加属性
-       //关联
+       //方法参数: 参数1:对象; 参数2:添加的属性名称; 参数3:配置项
        Object.defineProperty(person,'age', {
            // value: 18,
-           // enumerable: true, //此时代表这个属性是可以枚举的
-           // writable: true, //代表可以重写该属性(控制属性是否被修改)
+           // enumerable: true,  //控制age属性是可以枚举的，默认false
+           // writable: true,    //代表可以重写该属性(控制属性是否被修改)
            // configurable:true, //控制属性是否可以被删除 默认为false
 
-           //当读取person的age属性时get属性就会被调用，且返回值就是age的值
+           //当读取person的age属性时，get函数（getter）就会被调用，且返回值就是age的值。
            //invoke property proxy映射数据代理
            get: function () {
                //测试它的调用情况
-               console.log('@@@ GET AGE');
+               console.log('age属性被读取了');
                //此时age的值依赖number的值
                return number
            },
-           //当修改person的age属性时set(setter)属性就会被调用，且会收到修改的具体值
-           set(v) {
+           //当修改person的age属性时，set函数(setter)属性就会被调用，且会收到修改的具体值
+           set(value) {
                //测试
-               console.log('CHANGE AGE');
-               number=v;
+               console.log('age属性被修改');
+               number=value;
            }
        });
        // console.log(Object.keys(person))
