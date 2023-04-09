@@ -55,11 +55,18 @@
            //     })
            // }
            //尽量不要写成剪头函数，因为会丢失this
+           //data:function (){
+           //    console.log('@@@', this); //此时this是Vue
+           //    return {
+           //        name: 'shanghai'
+           //    }
+           //}
+           //data 函数简写
            data (){
-              console.log('@@@', this); //此时this是Vue
-              return {
-                  name: 'shanghai'
-              }
+               console.log('@@@', this); //此时this是Vue
+               return {
+                   name: 'shanghai'
+               }
            }
        });
    </script>
