@@ -35,7 +35,7 @@
     <button @click.once="add">添加一个老刘</button>
     <ul>
         <!--key唯一标识: 身份证，属性key是被vue给征用的，并不反应在真实dom上-->
-        <li v-for='(person, index) in persons' :key="person.id">
+        <li v-for='(person, index) in persons' :key="index">
             {{person.name}} - {{ person.age }}
             <!--为了看到key值的不正确滥用所导致的问题，我们添加一个input框-->
             <input type="text" />
