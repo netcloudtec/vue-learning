@@ -24,7 +24,6 @@
            <div>
               <h2>学生姓名:{{ name }}</h2>
               <h2>学生年龄:{{ age }}</h2>
-
            </div>
         `,
         data(){
@@ -34,7 +33,6 @@
             }
         },
     });
-
     const school = Vue.extend({
         template: `
           <div>
@@ -44,22 +42,18 @@
              <student></student>
           </div>
         `,
-
         data(){
             return {
                 name: '武汉科技大学',
                 address:'武汉'
             }
         },
-
         //组件嵌套
         //这里也是局部注册组件
         components: {
            student
         }
     });
-
-
       const hello = Vue.extend({
           template: `<h1>{{ msg }}</h1>`,
           data(){
@@ -68,8 +62,6 @@
               }
           },
       });
-
-
       const app = Vue.extend({
           template:`<div>
             <school></school>
@@ -80,7 +72,6 @@
               hello
           }
       });
-
         new Vue({
         template: `<app></app>`,
         el:"#root",
