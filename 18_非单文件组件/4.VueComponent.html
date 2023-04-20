@@ -31,12 +31,12 @@
 -->
 <div id="root">
     <school></school>
-    <hello>
-    </hello>
+    <hello></hello>
 </div>
 <script type="text/javascript">
     Vue.config.productionTip = false;
-
+    //vuecomponent的实例对象
+    //所谓的组件就是构造函数(VueComponent);
     const school = Vue.extend({
         template: `
           <div>
@@ -47,7 +47,7 @@
         `,
         data(){
             return {
-                name: '武汉科技大学',  //vuecomponent的实例对象
+                name: '武汉科技大学',
                 address:'武汉'
             }
         },
@@ -58,15 +58,10 @@
            }
         }
     });
-
-    // console.log(typeof school, school); //所谓的组件就是构造函数(VueComponent);
-
-
     //测试组件
     const test = Vue.extend({
        template:  `<h1>panyue</h1>`
     });
-
     //hello组件
     const hello = Vue.extend({
         template:`
@@ -83,8 +78,6 @@
             test
         }
     })
-
-
     const vm = new Vue({
         el:"#root",
         components:{
@@ -92,7 +85,6 @@
             hello
         }
     });
-
     //验证school与hello并不是同一个VueComponent构造函数
     // school.a = 99;
     // console.log('@', school);
